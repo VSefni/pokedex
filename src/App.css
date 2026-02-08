@@ -1,0 +1,6 @@
+body {
+    justify-content: center;
+    background-image: url("./assets/Pokedex.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

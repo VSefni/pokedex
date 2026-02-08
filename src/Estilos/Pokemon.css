@@ -1,0 +1,97 @@
+.Tarjeta {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    height: 50%;
+    padding: 24px 28px;
+    margin: 30px auto;
+    border: 1px solid #424242;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    transition: transform 0.3s ease,
+    box-shadow 0.3s ease;
+    transform-origin: center;
+}
+
+.steel {
+    background: #60a2b9;
+}
+.fairy {
+    background: #ef71ef;
+}
+.fire {
+    background: #e62829;
+}
+.water {
+    background: #2980ef;
+}
+.grass {
+    background: #3fa129;
+}
+.electric {
+    background: #fac000;
+}
+.normal {
+    background: #a0a2a0;
+}
+.ghost {
+    background: #704170;
+}
+.bug {
+    background: #92a212;
+}
+.rock {
+    background: #b0ab82;
+}
+.ground {
+    background: #915121;
+}
+.dark {
+    background: #4f3f3d;
+}
+.flying {
+    background: #81b9ef;
+}
+.poison {
+    background: #8f41cb;
+}
+.dragon {
+    background: #5061e1;
+}
+.fighting {
+    background: #ff8000;
+}
+.ice {
+    background: #3dd9ff;
+}
+.psychic {
+    background: #ef4179;
+}
+
+.Tarjeta:hover {
+    transform: scale(1.04);
+}
+
+.informacion img {
+    max-width: 90%;
+}
+
+.estadisticas,
+.informacion {
+    flex: 1;
+}
+
+.informacion p {
+    margin: 6px 0;
+    line-height: 1.4;
+}
+
+.Botones {
+    display: flex;
+    justify-content: space-around;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
