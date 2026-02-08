@@ -5,7 +5,6 @@ function Pokemon() {
 
     const [pokemon, setPokemon] = useState(null)
     const [numero, setNumero] = useState(1)
-    const [busqueda, setBusqueda] = useState("")
 
     useEffect(() => {
         const fetchpokemon = async () => {
@@ -28,7 +27,6 @@ function Pokemon() {
     function enviado(e) {
         e.preventDefault()
         const valor = (document.getElementById("Buscador").value)
-        setBusqueda(valor)
         cambioBusqueda(valor)
     }
 
