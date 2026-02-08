@@ -5,8 +5,9 @@ function Pokemon() {
 
     const [pokemon, setPokemon] = useState(null)
     const [numero, setNumero] = useState(1)
+    const [busqueda, setBusqueda] = useState("")
 
-    useEffect( () => {
+    useEffect(() => {
         const fetchpokemon = async () => {
             await fetch(`https://pokeapi.co/api/v2/pokemon/${numero}`)
                 .then(res => res.json())
@@ -19,8 +20,22 @@ function Pokemon() {
     function sumar() {
         setNumero(numero + 1);
     }
+
     function restar() {
         setNumero(numero - 1);
+    }
+
+    function enviado(e) {
+        e.preventDefault()
+        const valor = (document.getElementById("Buscador").value)
+        setBusqueda(valor)
+        cambioBusqueda(valor)
+    }
+
+    function cambioBusqueda(valor) {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${valor}`)
+            .then(res => res.json())
+            .then(data => setNumero(data.id))
     }
 
     if (!pokemon) {
@@ -31,6 +46,13 @@ function Pokemon() {
 
     return (
         <>
+            <form onSubmit={enviado}>
+                <fieldset>
+                    <label htmlFor="Buscador">Nombre: </label>
+                    <input id="Buscador" type="text"/>
+                </fieldset>
+                <button>Buscar</button>
+            </form>
             <div className={"Tarjeta " + pokemon.types[0].type.name}>
                 <div className="informacion">
                     <h3>#{pokemon.id} {pokemon.name}</h3>
@@ -46,8 +68,8 @@ function Pokemon() {
                 </div>
             </div>
             <div className="Botones">
-                <button onClick={restar} disabled={numero===1}>Anterior</button>
-                <button onClick={sumar} disabled={numero===1025}>Siguiente</button>
+                <button onClick={restar} disabled={numero === 1}>Anterior</button>
+                <button onClick={sumar} disabled={numero === 1025}>Siguiente</button>
             </div>
         </>
     )
