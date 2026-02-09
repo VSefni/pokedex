@@ -66,6 +66,7 @@ function Pokemon() {
                     <p><strong>Ataque Especial</strong>: {pokemon.stats[3].base_stat}</p>
                     <p><strong>Defensa Especial</strong>: {pokemon.stats[4].base_stat}</p>
                     <p><strong>Velocidad</strong>: {pokemon.stats[5].base_stat}</p>
+                    <p><strong>Base Stats</strong>: {pokemon.stats[0].base_stat+pokemon.stats[1].base_stat+pokemon.stats[2].base_stat+pokemon.stats[3].base_stat+pokemon.stats[4].base_stat+pokemon.stats[5].base_stat}</p>
                 </div>
             </div>
             <div className="Botones">
