@@ -69,7 +69,7 @@ function Pokemon() {
                 </div>
             </div>
             <div className="Botones">
-                <button onClick={restar} disabled={numero <= 1}>Anterior</button>
+                <button onClick={restar} disabled={numero <= 1 || numero >= 1025}>Anterior</button>
                 <button onClick={sumar} disabled={numero >= 1025}>Siguiente</button>
             </div>
         </>
