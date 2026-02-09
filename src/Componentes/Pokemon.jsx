@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
-import "../Estilos/Pokemon.css";
+import "../estilos/Pokemon.css";
 
 function Pokemon() {
 
     const [pokemon, setPokemon] = useState(null)
     const [numero, setNumero] = useState(1)
+    const [error, setError] = useState("")
 
     useEffect(() => {
         const fetchpokemon = async () => {
@@ -33,7 +34,8 @@ function Pokemon() {
     function cambioBusqueda(valor) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${valor}`)
             .then(res => res.json())
-            .then(data => setNumero(data.id))
+            .then(data => {setNumero(data.id); setError("")})
+            .catch(e => setError("Pokemon no existente"))
     }
 
     if (!pokemon) {
@@ -48,6 +50,7 @@ function Pokemon() {
                 <fieldset>
                     <label htmlFor="Buscador">Nombre: </label>
                     <input id="Buscador" type="text"/>
+                    <label htmlFor="Buscador"> {error}</label>
                 </fieldset>
                 <button>Buscar</button>
             </form>
@@ -66,8 +69,8 @@ function Pokemon() {
                 </div>
             </div>
             <div className="Botones">
-                <button onClick={restar} disabled={numero === 1}>Anterior</button>
-                <button onClick={sumar} disabled={numero === 1025}>Siguiente</button>
+                <button onClick={restar} disabled={numero <= 1}>Anterior</button>
+                <button onClick={sumar} disabled={numero >= 1025}>Siguiente</button>
             </div>
         </>
     )
