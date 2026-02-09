@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import "../estilos/Pokemon.css";
+import "../Estilos/Pokemon.css";
 
 function Pokemon() {
 
