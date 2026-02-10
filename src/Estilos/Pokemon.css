@@ -1,7 +1,6 @@
 .Tarjeta {
     display: flex;
     justify-content: center;
-    text-align: center;
     gap: 40px;
     height: 50%;
     padding: 24px 28px;
@@ -82,9 +81,12 @@
     flex: 1;
 }
 
-.informacion p {
-    margin: 6px 0;
-    line-height: 1.4;
+.informacion h3 {
+    text-align: center;
+}
+
+fieldset  {
+    margin-bottom: 1em;
 }
 
 .Botones {
@@ -94,4 +96,9 @@
 
 button:disabled {
     cursor: not-allowed;
+}
+
+.error {
+    color: #5e0000;
+    font-weight: bold;
 }
